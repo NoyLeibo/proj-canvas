@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+
+<body onload="onInit()">
+    <h1>Drawing images on Canvas</h1>
+
+    <label for="colorpicker" id="colorpicker">Select Color:
+        <input type="color" onchange="onColor(event)" value="#000000">
+    </label><br>
+
+    <label for="shape" id="shape">Select your shape:
+        <select name="favcolor" onchange="onOption(event)">
+            <option>Square</option>
+            <option>Circle</option>
+            <option>Simple</option>
+        </select>
+    </label><br>
+    <button onclick="onClearCanvas()">Clear</button><br>
+
+    <div class="canvas-container">
+        <canvas width="700" height="700" onmousemove="onMouseMove(event)">
+        </canvas>
+    </div>
+    
+    <div class="download-share">
+        
+        <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpeg</a>
+        <button class="btn" onclick="onUploadImg()">
+            Upload Image from Canvas and Share on Facebook
+        </button>
+
+    </div>
+
+    <script src="js/util/util.js"></script>
+    <script src="js/mainCanvas.js"></script>
+</body>
+</html>
